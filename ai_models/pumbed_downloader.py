@@ -55,7 +55,7 @@ def save_articles(records, output_file="data/pubmed_articles.json"):
 
     print(f"\n✅ {len(data)} articles enregistrés dans {output_file}")
 
-def download_pubmed(query="cardiology", max_results=50):
+def download_pubmed(query="", max_results=50):
     """
     Pipeline complet : recherche, téléchargement et sauvegarde.
     """

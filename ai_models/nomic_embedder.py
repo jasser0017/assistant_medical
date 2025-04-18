@@ -33,3 +33,15 @@ class NomicEmbedder:
             raise Exception(f"Erreur API Nomic: {response.status_code} - {response.text}")
 
         return response.json()["embeddings"]
+    
+
+    #tout d'abord on verifieer si L'API key est definie ou non , 
+    #si non un messge d'erreur va appartre sinon on commence 
+    #a construire la classe NomicEmbeder et on stocke au sein
+    #de lui lURL et l API key, puis on defini la methode embed
+    #qui prend en parametre une liste de texte et nous rendre 
+    #vecteur numerique(embedding), cette methode contient 2 dictionnaire
+    #headers qui contient 2 attribut Autorization qui nous permet de l acces
+    #content-text qui donne une idee au fonction que le retour doit en json
+    #et l autre dictionnaire est payload contient 2 attribut de meme qui
+    #represente le model et le type d'entree 

@@ -64,7 +64,7 @@ if __name__ == "__main__":
     generator = GroqTextGenerator()
 
     # Test avec une question en français
-    prompt_fr = "Explique les mécanismes physiopathologiques de l'insuffisance cardiaque congestive."
+    prompt_fr = " quelle est la paralysie faciale."
     print("FR >>", generator.generate(prompt_fr))
 
     # Test avec une question en anglais

@@ -71,10 +71,21 @@ if __name__ == "__main__":
     rag = RAGRetriever()
     rag.index_articles(max_docs=50)
 
-    question = "Quels est  ?"
+    question = "Quels est le paralysie faciale ?"
     results = rag.query(question)
 
     for i, (doc, meta) in enumerate(results, 1):
         print(f"\n🔎 Résultat {i} — PMID: {meta['pmid']}")
         print(f"Titre : {meta['title']}")
         print(doc[:300], "...")
+
+
+# on va une classe RagRetriever au sein d elle on lance une methode iniit dont on faire une instance de classe NomciEmbedd, on a define une liste qui s'applle textes qui va contenir 
+# le titele et le resume de l'article, un liste matadates qui vont contenir apres un dictionnaire de 2 attribut "pmid" et contient comme valeur l'id de l'article et l autre attribut est "titre"
+#qui contient le titre de l article et index qui est une memoire temporaire dans le ram qui va stocker les articles aprés, on a lance ici la methode index_article qui au sein d'elle 
+#on va lire les donnes qui vont etre en format json, on va extraire le titre, le resume et on va le stocker dans la liste texte,on va aussi extraire le pmid et le titre pour le rendre en
+#dictionnaire d'attribut pmid et titre pour  l enrigister dans la liste metadates, puis on va appliquer la mehode embed qui prend le textes qui comporte les titres et leurs resumes
+#afin de se conncter avec le model Nomic par une requette HTTP pour transformer ces donnes textuelles en des vecteurs numeriques et va nous retourner en forme Json, cest  par ce que on va 
+#le transformer en tableu array car FAISS utilise que les tableau array qui va mesurer la similarite des vecteurs afin de connattre les vecteurs le plus proches d ou les donnes texxtuelles
+#pour ils seront enrigistres dans la memoire ram, puis on a lance la methode querry au sein d elle on tapez une prompt , on va la transformer en vecteur numerique que celle les donnes des
+#des articles (meme traitement) afiin de chercher les donnes le plus proche pour elle
