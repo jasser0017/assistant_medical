@@ -1,4 +1,4 @@
-# ai_models/groq_rag_generator.py (version dynamique avec téléchargement PubMed)
+
 
 import os
 from dotenv import load_dotenv

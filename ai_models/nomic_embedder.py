@@ -1,4 +1,4 @@
-# ai_models/nomic_embedder.py
+
 
 import os
 import requests
